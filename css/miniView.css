@@ -1,0 +1,272 @@
+html {
+    overflow: hidden;
+}
+
+#closeButton {
+    position: absolute;
+    right: 32px;
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    z-index: 2;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+}
+
+#overlay {
+    position: fixed;
+    /* Sit on top of the page content */
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Black background with opacity */
+    z-index: 1;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+}
+
+#backgroundImg {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("/img/mainImg.jpg");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: scroll;
+    z-index: 1;
+}
+
+#objectImg {
+    width: 600px;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    padding-top: 5%;
+    z-index: 2;
+
+}
+
+#titleText {
+    text-align: center;
+    padding-top: 24px;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 2;
+}
+
+#description {
+    font-size: 22px;
+    color: #000;
+    padding: 10px;
+
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+#closeButton:hover {
+    opacity: 1;
+}
+
+#closeButton:before,
+#closeButton:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 4px;
+    background-color: #000;
+}
+
+#closeButton:before {
+    transform: rotate(45deg);
+}
+
+#closeButton:after {
+    transform: rotate(-45deg);
+}
+
+
+/* SVG */
+svg {
+    margin-top: -2%;
+}
+
+.str0 {
+    stroke: #B69730;
+    stroke-width: 10.42;
+    stroke-miterlimit: 2.61313
+}
+
+.fil1 {
+    fill: #B69730
+}
+
+.fil0 {
+    fill: white
+}
+
+#booksButton,
+#typeLibraryButton,
+#pairingPastButton,
+#darrensTypedButton,
+#chandlerPriceButton,
+#platenPressesButton,
+#vandercookButton,
+#inkButton {
+    cursor: pointer;
+}
+
+/* ----- */
+.borderDiv {
+    width: 100%;
+    height: 1800px;
+    border: 1px solid;
+    overflow: hidden;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #e0d2ff 21px, transparent 1%) center, linear-gradient(#e0d2ff 21px, transparent 1%) center, #000;
+    background-size: 22px 22px;
+    ;
+}
+
+.mainContainer {
+    width: 2000px;
+    height: 1500px;
+    position: relative;
+}
+
+#view {
+    left: -250px;
+    top: -300px;
+}
+
+/* Tooltip */
+
+
+/* minimap */
+#minimap #selectWin {
+    z-index: 2;
+}
+
+
+#minimap #selectWin .selectionWin {
+    position: absolute;
+    background-color: #5d5d5d;
+    opacity: 0.5;
+}
+
+#minimap,
+#selectWin,
+#miniview {
+    position: fixed;
+    bottom: 5%;
+    right: 2%;
+    overflow: hidden;
+    display: block;
+    width: 150px !important;
+    height: 100px !important;
+}
+
+#miniview {
+    border: 2px solid #B69730;
+}
+
+#minimap .mainContainer {
+    transform-origin: left top;
+    background-color: #fff;
+}
+
+
+
+/* Photo Background, 360 photos */
+#mainScene {
+    display: none;
+}
+
+
+/* Scroller */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Firefox scroller */
+.tooltipster-content {
+    scrollbar-color: #888 #f1f1f1;
+    scrollbar-width: thin;
+}
+
+/* Responsiveness */
+
+
+@media only screen and (max-width: 500px) {
+
+    #view {
+        left: -600px;
+        top: -300px;
+    }
+
+    #minimap,
+    #minimap #selectWin,
+    #minimap #miniview {
+        position: fixed;
+        bottom: 5% !important;
+        right: 5% !important;
+        overflow: hidden
+    }
+
+
+    #overlay {
+
+        height: 100%;
+    }
+
+    #objectImg {
+        width: 320px;
+        height: 400px;
+        object-fit: contain;
+        margin-top: 20%;
+    }
+
+
+}
+
+@media only screen and (max-width: 1180px) {
+
+    #view {
+        left: -600px;
+        top: 0px;
+    }
+}

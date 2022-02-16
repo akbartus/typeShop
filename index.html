@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>New Map</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="js/jquery.ui.touch-punch.min.js"></script>
+	<script src="js/jquery.mousewheel.js"></script>
+	<script src="js/miniView.js"></script>
+	<link rel="stylesheet" href="css/miniView.css" />
+	<script>
+		// Instantiate minimap
+		$(function () {
+			var miniViewObj = MiniView.init({
+				selector: "#view"
+			});
+		})
+	</script>
+	<style>
+
+	</style>
+</head>
+
+<body>
+
+
+	<div class="borderDiv" id="container">
+		<div class="mainContainer" id="view">
+
+
+			<!-- SVG Path -->
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11692.91 8267.72"
+				xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+				<defs>
+
+					<clipPath id="id0">
+						<rect x="127.71" y="258.86" width="11453.12" height="7635.41" />
+					</clipPath>
+				</defs>
+				<g id="Layer_x0020_1">
+					<metadata id="CorelCorpID_0Corel-Layer" />
+					<g style="clip-path:url(#id0)">
+						<image id="main.jpg" x="127.71" y="258.86" width="11453.12" height="7635.41"
+							xlink:href="img/mainImg.jpg" />
+					</g>
+					<g id="guillotine">
+						<rect class="fil0" x="8510.47" y="799.69" width="389.03" height="389.03" />
+						<polygon class="fil1" points="8797.07,994.21 8643.53,846.65 8643.53,1141.77 " />
+					</g>
+					<g id="typeLibrary">
+						<rect class="fil0"
+							transform="matrix(-4.94743E-15 0.062245 -0.062245 -4.94743E-15 2414.93 4634.89)"
+							width="6250" height="6250" />
+						<polygon class="fil1" points="2220.42,4737.33 2072.86,4890.87 2367.98,4890.87 " />
+					</g>
+					<g id="pastPresent">
+						<rect class="fil0" x="1175.14" y="1810.55" width="389.03" height="389.03" />
+						<polygon class="fil1" points="1277.57,2005.06 1431.11,2152.62 1431.11,1857.5 " />
+					</g>
+					<g id="chandlerPrice">
+						<rect class="fil0"
+							transform="matrix(-4.94559E-15 0.062245 -0.062245 -4.94559E-15 8608.54 2568.93)"
+							width="6250" height="6250" />
+						<polygon class="fil1" points="8414.02,2671.37 8266.46,2824.91 8561.58,2824.91 " />
+					</g>
+					<g id="presses">
+						<rect class="fil0" x="7833.84" y="4188.18" width="389.03" height="389.03" />
+						<polygon class="fil1" points="7936.28,4382.7 8089.81,4530.25 8089.81,4235.14 " />
+					</g>
+					<g id="vandercook">
+						<rect class="fil0 str0" x="4520.72" y="6441.48" width="389.03" height="389.03" />
+						<polygon class="fil1 str0" points="4807.31,6636 4653.77,6488.44 4653.77,6783.56 " />
+					</g>
+				</g>
+			</svg>
+
+		</div>
+	</div>
+
+
+	<div id="overlay">
+		<div id="closeButton"></div>
+		<div id="backgroundImg">
+			<img id="objectImg" src="">
+			<div id="titleText"></div>
+			<p id="description"></p>
+		</div>
+	</div>
+
+</body>
+
+<script>
+	var container = document.getElementById("container"),
+		overlay = document.getElementById("overlay");
+	closeButton = document.getElementById("closeButton");
+	objectImg = document.getElementById("objectImg");
+	titleText = document.getElementById("titleText");
+	description = document.getElementById("description");
+
+
+
+	var myText =
+		[{
+			title: "THE VANDERCOOK",
+			content: "The 'big kahuna' of the facility, weighing 4,000+ pounds, is the Vandercook & Sons No. 223 proofing press with three sets of inking rollers. Manufactured in the late 1930s to early '40s, it was donated by Lawhead Press."
+
+		},
+		{
+			title: "PAPER GUILLOTINE",
+			content: "Not-your-average paper cutter, this 26-inch paper guillotine dates back more than 100 years and came to OHIO from Marietta Hospital and donor Bobby Rosenstock."
+		},
+		{
+			title: "PLATEN PRESSES",
+			content: "Letterpress started on table-top platen presses, such as these Kelsey Excelsior presses and the larger American Printing Equipment press from donors Darren Baker, Sheppard Black and Linda Donaldson."
+
+		},
+		{
+			title: "PAIRING PAST & PRESENT",
+			content: "Banners for the 2019 Faculty Biennial Exhibition feature letterforms printed using the facility’s equipment. The letters were hand-inked then manipulated in Photoshop, melding traditional and contemporary graphic design techniques."
+
+		},
+		{
+			title: "TYPE LIBRARY",
+			content: "The library includes 17 cabinets organized by font and size and 400+ drawers of type from 8 point to 8 inches, including “The Sisters Wood Type Collection” donated by Karen Nulf and Anita Marks."
+
+		},
+		{
+			title: "THE CHANDLER & PRICE",
+			content: "This old-style, hand-fed, flywheel-driven 8x12 C&P printing press dates back to pre-1910 and was donated by Linda Donaldson."
+
+		}]
+
+
+	// CloseButton
+
+	closeButton.addEventListener("click", function () {
+
+		overlay.style.display = "none";
+		closeButton.style.display = "none";
+		container.style.display = "block";
+	})
+
+	// Vandercook
+	document.getElementById("vandercook").addEventListener("click", function () {
+		overlay.style.display = "block";
+		closeButton.style.display = "block";
+		objectImg.src = "/img/vandercook.jpg"
+		titleText.innerHTML = myText[0].title;
+		description.innerHTML = myText[0].content;
+	})
+	// Guillotine
+	document.getElementById("guillotine").addEventListener("click", function () {
+		overlay.style.display = "block";
+		closeButton.style.display = "block";
+		objectImg.src = "/img/chandlerPrice.jpg"
+		titleText.innerHTML = myText[1].title;
+		description.innerHTML = myText[1].content;
+	})
+	// Platen Presses
+	document.getElementById("presses").addEventListener("click", function () {
+		overlay.style.display = "block";
+		closeButton.style.display = "block";
+		objectImg.src = "/img/presses.jpg"
+		titleText.innerHTML = myText[2].title;
+		description.innerHTML = myText[2].content;
+	})
+	// Past Present
+	document.getElementById("pastPresent").addEventListener("click", function () {
+		overlay.style.display = "block";
+		closeButton.style.display = "block";
+		objectImg.src = "/img/pastPresent.jpg"
+		titleText.innerHTML = myText[3].title;
+		description.innerHTML = myText[3].content;
+	})
+	// Type Library
+	document.getElementById("typeLibrary").addEventListener("click", function () {
+		overlay.style.display = "block";
+		closeButton.style.display = "block";
+		objectImg.src = "/img/typeLibrary.jpg"
+		titleText.innerHTML = myText[4].title;
+		description.innerHTML = myText[4].content;
+	})
+	// Chandler Price
+	document.getElementById("chandlerPrice").addEventListener("click", function () {
+		overlay.style.display = "block";
+		closeButton.style.display = "block";
+		objectImg.src = "/img/chandlerPrice.jpg"
+		titleText.innerHTML = myText[5].title;
+		description.innerHTML = myText[5].content;
+	})
+</script>
+
+</html>
