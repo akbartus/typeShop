@@ -140,7 +140,7 @@ svg {
     overflow: hidden;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(90deg, #e0d2ff 21px, transparent 1%) center, linear-gradient(#e0d2ff 21px, transparent 1%) center, #000;
+    background: #f9f7ed; 
     background-size: 22px 22px;
     ;
 }
@@ -229,10 +229,18 @@ svg {
 }
 
 /* Responsiveness */
-
+@media only screen and (max-width: 320px) {
+    #objectImg {
+        margin-top: 20%;
+        width: 290px !important;
+        height: 250px !important;       
+    
+    }
+}
 
 @media only screen and (max-width: 500px) {
 
+    
     #view {
         left: -600px;
         top: -300px;

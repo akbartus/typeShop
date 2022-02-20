@@ -124,7 +124,7 @@
 		},
 		{
 			title: "TYPE LIBRARY",
-			content: "The library includes 17 cabinets organized by font and size and 400+ drawers of type from 8 point to 8 inches, including “The Sisters Wood Type Collection” donated by Karen Nulf and Anita Marks."
+			content: "The library includes 19 cabinets organized by font and size and 400+ drawers of type from 8 point to 8 inches, including “The Sisters Wood Type Collection” donated by Karen Nulf and Anita Marks."
 
 		},
 		{
@@ -138,6 +138,7 @@
 
 	closeButton.addEventListener("click", function () {
 
+		objectImg.style.width = "600px";
 		overlay.style.display = "none";
 		closeButton.style.display = "none";
 		container.style.display = "block";
@@ -155,7 +156,7 @@
 	document.getElementById("guillotine").addEventListener("click", function () {
 		overlay.style.display = "block";
 		closeButton.style.display = "block";
-		objectImg.src = "/img/chandlerPrice.jpg"
+		objectImg.src = "/img/guillotine.jpg"
 		titleText.innerHTML = myText[1].title;
 		description.innerHTML = myText[1].content;
 	})
@@ -172,6 +173,7 @@
 		overlay.style.display = "block";
 		closeButton.style.display = "block";
 		objectImg.src = "/img/pastPresent.jpg"
+		objectImg.style.width = "unset";
 		titleText.innerHTML = myText[3].title;
 		description.innerHTML = myText[3].content;
 	})
@@ -180,6 +182,7 @@
 		overlay.style.display = "block";
 		closeButton.style.display = "block";
 		objectImg.src = "/img/typeLibrary.jpg"
+		objectImg.style.width = "unset";
 		titleText.innerHTML = myText[4].title;
 		description.innerHTML = myText[4].content;
 	})
